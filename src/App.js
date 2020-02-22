@@ -13,9 +13,10 @@ function App() {
     <Router>
       <Switch>
         
-        <Route  path="/" component={Dashboard} />
+        <Route  exact path="/" component={Dashboard} />
+        <Route   path="/dashboard" component={Dashboard} />
         <Route  path="/partners" component={Partners} />
-        <Route  path="/programs" component={Programs} />
+        <Route  path="/marketplace" component={Programs} />
         
 
       </Switch>

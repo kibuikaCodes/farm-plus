@@ -64,8 +64,7 @@ class SampleGraph extends Component {
                             display:true,
                             position:'right',
                             
-                            },
-                            height: '50vh'
+                            }
                         }}
                         />
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
@@ -151,7 +151,7 @@ export default function Partners() {
                         <MenuIcon />
                       </IconButton>
                       <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-                        MaishaFiti Partners
+                        Farm+ Partners
                       </Typography>
                       <IconButton color="inherit">
                         <Badge badgeContent={4} color="secondary">
@@ -225,7 +225,7 @@ export default function Partners() {
                                     autoFocus
                                     margin="dense"
                                     id="name"
-                                    label="Discount"
+                                    label="Description"
                                     type="text"
                                     style={{marginTop: '1em'}}
                                     fullWidth

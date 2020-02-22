@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
@@ -18,6 +18,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems } from '../components/ListItems';
 import SampleGraph from "../graphs/SampleGraph";
+import SampleGraph2 from "../graphs/SampleGraph2";
+import SampleGraph3 from "../graphs/SampleGraph3";
 
 
 // function Copyright() {
@@ -176,15 +178,16 @@ export default function Dashboard() {
               <div className={classes.appBarSpacer} />
               <Container maxWidth="lg" className={classes.container}>
                 <div >
-                  <p>hey</p>
-                  <SampleGraph style={{ height: '50px'}}/>
+               
+                  <SampleGraph />
                 </div>
-                <div style={{ display: 'flex', flexDirection: "row"}}>
-                  <div>
-                    <p>hey</p>
+                <div >
+                  <div tyle={{ width: '50%'}}>
+                    
+                    <SampleGraph2 />
                   </div>
                   <div>
-                    <p>hey</p>
+                    <SampleGraph3 />
                   </div>
                 </div>
                   
