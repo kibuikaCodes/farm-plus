@@ -17,22 +17,22 @@ export const mainListItems = (
         <ListItemText primary="Zones ( Zone1 )" />
       </ListItem>
     </Link>
-    {/* <Link to='/marketplace' style={{ textDecoration: 'none', color: 'black'}}> */}
+    <Link to='/marketplace' style={{ textDecoration: 'none', color: 'black'}}>
       <ListItem button >
         <ListItemIcon>
           {/* <ShoppingCartIcon /> */}
         </ListItemIcon>
         <ListItemText primary="MarketPlace" />
       </ListItem>
-    {/* </Link> */}
-    {/* <Link to='/partners' style={{ textDecoration: 'none', color: 'black'}}> */}
+    </Link>
+    <Link to='/partners' style={{ textDecoration: 'none', color: 'black'}}>
     <ListItem button>
       <ListItemIcon>
         {/* <PeopleIcon /> */}
       </ListItemIcon>
       <ListItemText primary="Partners" />
     </ListItem>
-    {/* </Link> */}
+    </Link>
     
     <ListItem button>
       <ListItemIcon>

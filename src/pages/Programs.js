@@ -207,7 +207,7 @@ export default function Partners() {
                         </Table> */}
                         <div>
                             <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-                                Add New Partner
+                                Add New Product
                             </Button>
                             <Dialog open={dialogOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
                                 <DialogTitle id="form-dialog-title">New Partner</DialogTitle>
@@ -216,7 +216,7 @@ export default function Partners() {
                                     autoFocus
                                     margin="dense"
                                     id="name"
-                                    label="Partner Name"
+                                    label="Product Name"
                                     type="text"
                                     fullWidth
                                     
