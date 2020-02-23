@@ -5,7 +5,7 @@ import {Line} from 'react-chartjs-2';
 import socketIOClient from "socket.io-client";
 
 
-let i = 0;
+// let i = 0;
 
 class SampleGraph extends Component {
     constructor(props){
@@ -24,8 +24,8 @@ class SampleGraph extends Component {
         const { endpoint } = this.state;
         const socket = socketIOClient(endpoint);
         socket.on('Data', response => this.setState({
-            temperatureData: [...this.state.temperatureData,response.field3],
-            labels: [...this.state.labels, i++]
+            temperatureData: [...this.state.temperatureData,response.field3*5],
+            labels: [...this.state.labels, new Date().getHours() +':'+ new Date().getMinutes() +':'+ new Date().getSeconds()]
 
         }));
     }
@@ -64,6 +64,16 @@ class SampleGraph extends Component {
                             display:true,
                             position:'right',
                             
+                            },
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        // Include a dollar sign in the ticks
+                                        callback: function(value, index, values) {
+                                            return value + ' °C';
+                                        }
+                                    }
+                                }]
                             }
                         }}
                         />

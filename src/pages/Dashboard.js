@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, withTheme } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
@@ -12,6 +12,11 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -19,7 +24,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems } from '../components/ListItems';
 import SampleGraph from "../graphs/SampleGraph";
 import SampleGraph2 from "../graphs/SampleGraph2";
-import SampleGraph3 from "../graphs/SampleGraph3";
+// import SampleGraph3 from "../graphs/SampleGraph3";
 
 
 // function Copyright() {
@@ -118,6 +123,18 @@ const useStyles = makeStyles(theme => ({
 
 export default function Dashboard() {
   const classes = useStyles();
+  const [dialogOpen, dialogSetOpen] = React.useState(false);
+
+  const handleClickOpen = e => {
+    e.preventDefault();
+    dialogSetOpen(true);
+  };
+
+  const handleClose = e => {
+    e.preventDefault();
+    dialogSetOpen(false);
+  };
+
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -181,16 +198,53 @@ export default function Dashboard() {
                
                   <SampleGraph />
                 </div>
-                <div >
-                  <div tyle={{ width: '50%'}}>
+                <div style={{marginTop: '5em'}}>
+                  <div >
                     
                     <SampleGraph2 />
                   </div>
                   <div>
-                    <SampleGraph3 />
+                    {/* <SampleGraph3 /> */}
                   </div>
                 </div>
-                  
+                  <div style={{ marginTop: '4em', alignItems: 'center', justifyContent: 'center', display: 'flex'}}>
+                    <Button variant='contained' color='primary' onClick={handleClickOpen}>Send SMS</Button>
+                    <Dialog open={dialogOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
+                                <DialogTitle id="form-dialog-title">Send Bulk SMS</DialogTitle>
+                                <DialogContent>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="name"
+                                    label="Target crop"
+                                    type="text"
+                                    fullWidth
+                                    
+                                />
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="name"
+                                    label="Description"
+                                    type="text"
+                                    style={{marginTop: '1em'}}
+                                    fullWidth
+                                    
+                                />
+                                </DialogContent>
+                                <DialogActions>
+                                {/* <Button onClick={handleClose} color="primary">
+                                    Cancel
+                                </Button> */}
+                                <Button  color="primary">
+                                    Send
+                                </Button>
+                                <Button onClick={handleClose} color="primary">
+                                    Close
+                                </Button>
+                                </DialogActions>
+                            </Dialog>
+                  </div>
                 
                 <Box pt={4}>
                   {/* <Copyright /> */}
